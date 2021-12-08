@@ -1,0 +1,81 @@
+*{
+
+	background-color: rgb(32, 33, 36);
+	font-family: 'Roboto', sans-serif;
+	color: white;
+}
+
+.grid{
+	  display: grid;
+	  grid-template-rows: auto;
+	  grid-template-columns: auto;
+  }
+  
+  
+  
+li {
+	float: right;
+	grid-area: auto;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+  }
+  
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 10px 10px;
+	text-decoration: none;
+	font-weight: bold;
+  }
+  
+li a:hover {
+      color: #8ab4f8;
+  }
+
+  .Schlagzeilen{
+	  grid-area: auto;
+	  text-align: center;
+  }
+
+  .Inhalt{
+	  grid-area: auto;
+	  text-align: center;
+  }
+
+  form{
+		grid-area: auto;
+  }
+
+  .form-create{
+		grid-area: auto;
+  }
+
+  .create-titel{
+      text-align: center;
+		grid-area: auto;
+		padding: 1%;
+  }
+
+  .create-bild{
+      text-align: center;
+		grid-area: auto;
+		padding: 5%;
+  }
+
+  .create-textarea{
+      text-align: center;
+      grid-area: auto;
+      padding: 2%;
+  }
+
+  .submit{
+    text-align: center;
+    grid-area: auto;
+  }
+
+
+
+  
+
