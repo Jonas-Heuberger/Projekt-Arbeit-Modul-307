@@ -31,11 +31,13 @@
 		<div class="Inhalt">
 			<p>
 				<?php
-				$filename = "Lernjournal/Lernjournal.txt";
-				file_get_contents ($filename);
-				$ausgabe = file_get_contents($filename);
-				echo"<pre>" .htmlspecialchars($ausgabe). "</pre>";
-				?> 
+            $data = file_get_contents("files");
+            $all = explode(" | ", $data);
+
+            echo"<pre>" . htmlspecialchars($all[0]) . "</pre>";
+            echo"<pre>" . htmlspecialchars($all[1]) . "</pre>";
+            echo"<pre>" . htmlspecialchars($all[2]) . "</pre>";
+          ?>
 			</p>
 		</div>
 	</div>
