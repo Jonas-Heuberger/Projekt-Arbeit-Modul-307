@@ -28,17 +28,17 @@
 
 		<div class="user-titel">
 			<label for="user-titel">Titel:</label>
-			<input type="text" name="cTitel">
+			<input type="text" name="Titel">
 		</div>
 
 		<div class="user-author">
 			<label for="user-author">Author:</label>
-			<input type="text" name="cAuthor">
+			<input type="text" name="Author">
 		</div>
 
 		<div class="user-bild">
 			<label for="user-bild">Bild:</label>
-			<input type="file" name="cPicture">
+			<input type="file" name="Picture">
 		</div>
 
 		<div class="user-textarea">
@@ -47,18 +47,18 @@
 
 		<div class="submit">
 			<input type="button" value="Abbrechen">
-			<input type="submit" value="Senden" name="sub">	
+			<input type="submit" value="Senden" name="submit">
 		</div>
 		</form>
 </div>
 <!--Logic for Formula-->
 	<?php
-		if(isset($_POST['sub'])){
+		if(isset($_POST['submit'])){
 
-			$ttl = htmlspecialchars($_POST['cTitel']);
+			$ttl = htmlspecialchars($_POST['Titel']);
 			$txt = htmlspecialchars($_POST['Text']);
-			$atr = htmlspecialchars($_POST['cAuthor']);
-			$pic = htmlspecialchars($_POST['cPicture']);
+			$atr = htmlspecialchars($_POST['Author']);
+			$pic = htmlspecialchars($_POST['Picture']);
 
 			$timeStamp = $_SERVER['REQUEST_TIME'];  //gmdate("d m y g:i a", $_SERVER['REQUEST_TIME']);
 
