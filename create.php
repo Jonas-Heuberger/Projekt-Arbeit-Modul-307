@@ -24,7 +24,7 @@
 				</header>
 		</div>
 	<div class="form-create">
-		<form action="index.php" method="Post">
+		<form action="create.php" method="Post">
 
 		<div class="user-titel">
 			<label for="user-titel">Titel:</label>
@@ -47,11 +47,28 @@
 
 		<div class="submit">
 			<input type="button" value="Abbrechen">
-			<input type="submit" value="Senden">	
+			<input type="submit" value="Senden" name="sub">	
 		</div>
 		</form>
 </div>
+<!--Logic for Formula-->
+	<?php
+		if(isset($_POST['sub'])){
 
+			$ttl = htmlspecialchars($_POST['cTitel']);
+			$txt = htmlspecialchars($_POST['Text']);
+			$atr = htmlspecialchars($_POST['cAuthor']);
+			$pic = htmlspecialchars($_POST['cPicture']);
+
+			$timeStamp = $row['date'];
+
+			$filename= "files/".$timeStamp.".txt";
+			$content= $ttl." | ".$txt." | ".$atr." | ".$pic;
+			file_put_contents($filename, $content);
+
+			header("Refresh:0; url=index.php"); //reload page and make data count
+		}      
+	?>  
 </div>
 </body>
 </html>
