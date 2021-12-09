@@ -60,7 +60,7 @@
 			$atr = htmlspecialchars($_POST['cAuthor']);
 			$pic = htmlspecialchars($_POST['cPicture']);
 
-			$timeStamp = gmdate("Y-m-d\TH:i:s\Z", $_SERVER['REQUEST_TIME']);
+			$timeStamp = gmdate("d m y g:i a", $_SERVER['REQUEST_TIME']);
 
 			$filename= "files/".$timeStamp.".txt";
 			$content= $ttl." | ".$txt." | ".$atr." | ".$pic;
