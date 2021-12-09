@@ -52,22 +52,28 @@ li a:hover {
 		grid-area: auto;
   }
 
-  .create-titel{
-      text-align: center;
+  .user-titel{
+    text-align: center;
 		grid-area: auto;
 		padding: 1%;
   }
 
-  .create-bild{
-      text-align: center;
-		grid-area: auto;
-		padding: 5%;
+  .user-author{
+    text-align: center;
+    grid-area: auto;
+    padding: 1%;
   }
 
-  .create-textarea{
-      text-align: center;
-      grid-area: auto;
-      padding: 2%;
+  .user-bild{
+    text-align: center;
+		grid-area: auto;
+		padding: 1%;
+  }
+
+  .user-textarea{
+    text-align: center;
+    grid-area: auto;
+    padding: 2%;
   }
 
   .submit{

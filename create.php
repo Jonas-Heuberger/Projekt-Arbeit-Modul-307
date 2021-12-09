@@ -26,18 +26,23 @@
 	<div class="form-create">
 		<form action="index.php" method="Post">
 
-		<div class="create-titel">
+		<div class="user-titel">
 			<label for="user-titel">Titel:</label>
 			<input type="text" name="cTitel">
 		</div>
 
-		<div class="create-bild">
+		<div class="user-author">
+			<label for="user-author">Author:</label>
+			<input type="text" name="cAuthor">
+		</div>
+
+		<div class="user-bild">
 			<label for="user-bild">Bild:</label>
 			<input type="file" name="cPicture">
 		</div>
 
-		<div class="create-textarea">
-			<textarea name="Text" cols="75" rows="35"></textarea>
+		<div class="user-textarea">
+			<textarea name="Text" cols="100" rows="50"></textarea>
 		</div>
 
 		<div class="submit">
