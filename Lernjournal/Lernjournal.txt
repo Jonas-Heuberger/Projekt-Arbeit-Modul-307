@@ -90,4 +90,15 @@ Ich habe auch dies mit CSS Grid gemacht da es wie oben bereits erwähnt sehr ein
 eine Website damit zu bauen. Dann folgte eine weitere Schwierigkeit und zwar der ganze PHP Code.
 Aber zuerst habe ich mich via Youtube über die einzelnen Funktionen schlau gemacht.
 
+9.12.21
+
+Heute habe ich mit dem PHP Code angefangen. Konkret heisst dies das ich das create.php PHP File 
+soweit gebracht habe das ich den Nutzer nach dem Titel, dem Author, nach dem Bild und nach 
+dem Artikel abfragen kann. Ich speichere dabei die gesamte Nutzer eingabe in eine Text Datei. 
+Ich trenne die verschiedenen Eingaben mit dem folgenden Zeichen | da dies sehr selten in 
+Texten bzw in Artikeln vorkommt. Hätte ich ein Komma beispielsweise gewählt hätte dies die
+Sache um einiges erschwert. Die Namensgebung der Datei hat mir am Anfang auch kleine
+Schwierigkeiten bereitet, dann hat mir aber ein Klassenkamerad den Tipp gegeben, 
+die Text Datei mit einem Timestamp zu speichern.
+
 
