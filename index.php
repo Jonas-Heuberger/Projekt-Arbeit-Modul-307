@@ -41,14 +41,25 @@
 			*/
 
 			foreach(glob("*.txt") as $filename) {
+			$data = file_get_contents("files/");
+            $explode = explode(" | ", $inhalt);
+            echo"<pre>" . htmlspecialchars($explode[0]) . "</pre>";
+            echo"<pre>" . htmlspecialchars($explode[1]) . "</pre>";
+            echo"<pre>" . htmlspecialchars($explode[2]) . "</pre>";
+			}
+
+
+
+				/*
                 $inhalt= file_get_contents($filename);
                 $artikelInhalt = explode(" | ", $inhalt);
                 $Titel= htmlspecialchars($artikelInhalt[0]);
-                $Autor = htmlspecialchars($artikelInhalt[2]); 
-				$Text = htmlspecialchars($artikelInhalt[1]);
+				$Text = htmlspecialchars($artikelInhalt[1]); 
+				$Autor = htmlspecialchars($artikelInhalt[2]);
+				$Bild = htmlspecialchars($artikelInhalt[3]);
 			}
                 $ausgabe = "<b>".$Titel."</b>".   "<br />". $Text. "<br />". $Autor;    
-                echo "<p>" .$ausgabe."</p>";
+                echo "<p>" .$ausgabe."</p>";*/
           ?>
 			</p>
 		</div>

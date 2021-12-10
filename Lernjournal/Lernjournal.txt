@@ -102,3 +102,13 @@ Schwierigkeiten bereitet, dann hat mir aber ein Klassenkamerad den Tipp gegeben,
 die Text Datei mit einem Timestamp zu speichern.
 
 
+10.12.21
+
+Heute habe ich mich mit dem PHP Code für die index.php Seite zu schreiben. 
+Und habe gerade erst einmal ein paar neue Dinge kennenlernen müssen.
+Konkret habe ich z.b. die glob Funktion kennengelernt. Sie ermöglicht 
+es mir .txt Dateien herauszufiltern. Des weiteren habe ich 
+eine foreach Loop angewendet um 
+
+
+

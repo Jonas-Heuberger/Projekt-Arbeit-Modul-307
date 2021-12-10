@@ -28,21 +28,21 @@
 
 		<div class="user-titel">
 			<label for="user-titel">Titel:</label>
-			<input type="text" name="Titel">
+			<input type="text" name="Titel" required="required">
 		</div>
 
 		<div class="user-author">
 			<label for="user-author">Autor:</label>
-			<input type="text" name="Autor">
+			<input type="text" name="Autor" required="required">
 		</div>
 
 		<div class="user-bild">
 			<label for="user-bild">Bild:</label>
-			<input type="file" name="Bild">
+			<input type="file" name="Bild" required="required">
 		</div>
 
 		<div class="user-textarea">
-			<textarea name="Text" cols="100" rows="50"></textarea>
+			<textarea name="Text" cols="100" rows="50" required="required"></textarea>
 		</div>
 
 		<div class="submit">
@@ -54,7 +54,7 @@
 		</div>
 		</form>
 </div>
-<!--Formular Inhalt speichern-->
+<!--Formular Inhalt in Textdatei speichern-->
 	<?php
 		if(isset($_POST['submit'])){
 
@@ -71,6 +71,9 @@
 
 			header("Refresh:0; url=index.php"); //reload page and make data count
 		}      
+		
+			
+		
 	?>  
 </div>
 </body>
