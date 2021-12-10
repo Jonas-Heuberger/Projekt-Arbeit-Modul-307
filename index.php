@@ -31,12 +31,24 @@
 		<div class="Inhalt">
 			<p>
 				<?php
+				/*
             $data = file_get_contents("files");
-            $explode = explode(" | ", $data);
+            $explode = explode(" | ", $inhalt);
 
             echo"<pre>" . htmlspecialchars($explode[0]) . "</pre>";
             echo"<pre>" . htmlspecialchars($explode[1]) . "</pre>";
             echo"<pre>" . htmlspecialchars($explode[2]) . "</pre>";
+			*/
+
+			foreach(glob("*.txt") as $filename) {
+                $inhalt= file_get_contents($filename);
+                $artikelInhalt = explode(" | ", $inhalt);
+                $Titel= htmlspecialchars($artikelInhalt[0]);
+                $Autor = htmlspecialchars($artikelInhalt[2]); 
+				$Text = htmlspecialchars($artikelInhalt[1]);
+			}
+                $ausgabe = "<b>".$Titel."</b>".   "<br />". $Text. "<br />". $Autor;    
+                echo "<p>" .$ausgabe."</p>";
           ?>
 			</p>
 		</div>

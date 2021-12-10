@@ -32,13 +32,13 @@
 		</div>
 
 		<div class="user-author">
-			<label for="user-author">Author:</label>
-			<input type="text" name="Author">
+			<label for="user-author">Autor:</label>
+			<input type="text" name="Autor">
 		</div>
 
 		<div class="user-bild">
 			<label for="user-bild">Bild:</label>
-			<input type="file" name="Picture">
+			<input type="file" name="Bild">
 		</div>
 
 		<div class="user-textarea">
@@ -54,19 +54,19 @@
 		</div>
 		</form>
 </div>
-<!--Logic for Formula-->
+<!--Formular Inhalt speichern-->
 	<?php
 		if(isset($_POST['submit'])){
 
-			$ttl = htmlspecialchars($_POST['Titel']);
-			$txt = htmlspecialchars($_POST['Text']);
-			$atr = htmlspecialchars($_POST['Author']);
-			$pic = htmlspecialchars($_POST['Picture']);
+			$Titel = htmlspecialchars($_POST['Titel']);
+			$Text = htmlspecialchars($_POST['Text']);
+			$Autor = htmlspecialchars($_POST['Autor']);
+			$Bild = htmlspecialchars($_POST['Bild']);
 
 			$timeStamp = $_SERVER['REQUEST_TIME'];  //gmdate("d m y g:i a", $_SERVER['REQUEST_TIME']);
 
 			$filename= "files/".$timeStamp.".txt";
-			$content= $ttl." | ".$txt." | ".$atr." | ".$pic;
+			$content= $Titel." | ".$Text." | ".$Autor." | ".$Bild;
 			file_put_contents($filename, $content);
 
 			header("Refresh:0; url=index.php"); //reload page and make data count
