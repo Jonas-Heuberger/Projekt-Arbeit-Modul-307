@@ -46,7 +46,10 @@
 		</div>
 
 		<div class="submit">
+			<a href="index.php">
 			<input type="button" value="Abbrechen">
+			</a>
+			
 			<input type="submit" value="Senden" name="submit">
 		</div>
 		</form>
