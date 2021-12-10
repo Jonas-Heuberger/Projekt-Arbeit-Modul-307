@@ -49,7 +49,9 @@ Dann folgte das Design für die ganzen Seite. Dies habe ich mit figma gemacht.
 Zuletzt habe ich die Word Datei Nachgeführt und alle Grafiken und Beschreibungen 
 in die Word Datei getan und es zu einer PDF Datei um konventiert.
 
+
 29.11.21
+
 Ich habe das Konzept per Mail an die Lehrperson geschickt. Dann folgte der 
 theoretische Teil der Lehrperson über den Umgang mit Dateien.
 Danach habe ich mich daran gemacht die PHP Files zu erstellen und habe 
@@ -68,6 +70,7 @@ zufügen. Dies hat wunderbar geklappt. Dann habe ich mich mit dem Thema Grid und
 gesetzt da dieses Wissen für das Design notwendig ist und ich ich so viel Ahnung von der ganzen 
 Sache habe.
 
+
 4.12.21
 
 Heute war ein anstrengender Tag da ich kaum Kenntnisse in HTML und CSS mehr habe. Deswegen musste 
@@ -79,9 +82,12 @@ der den ganzen Body umgschliesst habe ich die Klasse Grid zugeteilt mittels disp
 die Auto Grid Funktion verwendet also grid-template-rows: auto; grid-template-columns: auto;. 
 Dann musste ich nur noch den Klassen grid-area: auto; hinzufügen.
 
+
 6.12.21
 
 Heute war ein sehr Produktiver Tag ich habe das Design für create.html und edit.html.
 Ich habe auch dies mit CSS Grid gemacht da es wie oben bereits erwähnt sehr einfach ist 
-eine Website damit zu bauen.
+eine Website damit zu bauen. Dann folgte eine weitere Schwierigkeit und zwar der ganze PHP Code.
+Aber zuerst habe ich mich via Youtube über die einzelnen Funktionen schlau gemacht.
+
 
