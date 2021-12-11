@@ -65,7 +65,7 @@
 
 			$timeStamp = $_SERVER['REQUEST_TIME'];  //gmdate("d m y g:i a", $_SERVER['REQUEST_TIME']);
 
-			$filename= "files/".$timeStamp.".txt";
+			$filename= "Artikel/".$timeStamp.".txt";
 			$content= $Titel." | ".$Text." | ".$Autor." | ".$Bild;
 			file_put_contents($filename, $content);
 
