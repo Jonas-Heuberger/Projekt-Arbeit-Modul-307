@@ -41,7 +41,7 @@
 				$Bild = htmlspecialchars($artikelInhalt[3]);
 			
                 $artikel = "<b>" . $Titel."</b>" .   "<br />" . $Autor . "<br />" . $Text;    
-                echo "<p>" .$artikel."</p>";
+                echo "<p>" .$artikel . "</p>";
 			}
           ?>
 			</p>
