@@ -41,8 +41,10 @@
 				$Text = htmlspecialchars($artikelInhalt[1]); 
 				$Autor = htmlspecialchars($artikelInhalt[2]);
 
+				$PicturePath = $_FILES['Bild']['tmp_name'];
+
 				echo "$Titel" . "<br>";
-				echo <img src=\"$Bild\"/>" <br>;
+				echo "<img src=$PicturePath/>" . "<br>";
 				echo "von " . "$Autor" . "<br>";
 				echo "$Text" . "<br>";
 				echo "<br>";

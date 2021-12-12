@@ -57,25 +57,21 @@
 <!--Formular Inhalt in Textdatei speichern-->
 	<?php
 		if(isset($_POST['submit']) && isset($_FILES['Bild'])){
-
-
-			echo "<pre>";
-			print_r($_FILES['Bild']);
-			echo "<pre>";
-
 			$Titel = htmlspecialchars($_POST['Titel']);
 			$Text = htmlspecialchars($_POST['Text']);
 			$Autor = htmlspecialchars($_POST['Autor']);
 			//$Bild = htmlspecialchars($_POST['Bild']);
-
 			$timeStamp = $_SERVER['REQUEST_TIME'];  //gmdate("d m y g:i a", $_SERVER['REQUEST_TIME']);
 
 			$filename= "Artikel/".$timeStamp.".txt";
 			$content= $Titel." | ".$Text." | ".$Autor." | ".$Bild;
 			file_put_contents($filename, $content);
 
-			$Bild = $_FILES['Bild']['name'];
-			$timeStamp = $_SERVER['REQUEST_TIME'];  //gmdate("d m y g:i a", $_SERVER['REQUEST_TIME']);
+
+			$PictureName = $_FILES['Bild']['name'];
+			$PictureSize = $_FILES['Bild']['size'];
+			$PicturePath = $_FILES['Bild']['tmp_name'];
+			$timeStamp = $_SERVER['REQUEST_TIME']; 
 			$BildName = "Bilder/".$timeStamp.".jpg";
 
 			file_put_contents($BildName, $Bild);
