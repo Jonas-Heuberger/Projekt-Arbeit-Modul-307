@@ -31,21 +31,18 @@
 		<!-- --> 
 		<div class="user-titel">
 			<label for="user-titel">Titel:</label>
-			<input type="text" name="Titel" required="required">
+			<input maxlength="80" type="text" name="Titel" required="required">
 		</div>
 			<!-- --> 
 		<div class="user-author">
 			<label for="user-author">Autor:</label>
-			<input type="text" name="Autor" required="required">
+			<input maxlength="50" type="text" name="Autor" required="required">
 		</div>
 			<!-- --> 
-		<div class="user-bild">
-			<label for="user-bild">Bild:</label>
-			<input type="file" name="Bild" required="required">
-		</div>
+		
 			<!-- --> 
 		<div class="user-textarea">
-			<textarea name="Text" cols="100" rows="50" required="required"></textarea>
+			<textarea maxlength="2000" name="Text" cols="100" rows="50" required="required"></textarea>
 		</div>
 		<!-- --> 
 		<div class="submit">
@@ -58,6 +55,14 @@
 			<input type="submit" value="Senden" name="submit">
 		</div>
 		</form>
+
+		<div class="user-bild">
+		<form enctype="multipart/form-data" action="create.php" method="post">
+	  	<input type="hidden" name="max_groesse" value="500000"/>
+	  	<input type="file" name="Bild" required="required"/>
+	  	<input type="submit" name="upload" value="Upload">
+		</form>
+		</div>
 </div>
 <!--Formular Inhalt in Textdatei speichern-->
 	<?php
@@ -66,39 +71,24 @@
 			$Titel = htmlspecialchars($_POST['Titel']);
 			$Text = htmlspecialchars($_POST['Text']);
 			$Autor = htmlspecialchars($_POST['Autor']);
+            
 
 			$timeStamp = $_SERVER['REQUEST_TIME'];  //gmdate("d m y g:i a", $_SERVER['REQUEST_TIME']);
 
 			$filename= "Artikel/".$timeStamp.".txt";
 			$content= $Titel . " | " . $Autor . " | ". $Text;
+            file_put_contents($filename, $content);
 
-			/*
-			$Bild = $_FILES['Bild']['tmp_name'];
-			$timeStamp = $_SERVER['REQUEST_TIME'];  //gmdate("d m y g:i a", $_SERVER['REQUEST_TIME']);
-			$BildName = "Bilder/".$timeStamp.".jpg";
-			file_put_contents($BildName, $Bild);
-			*/
-
-			file_put_contents($filename, $content);
-
-				$Bild = $_FILES['Bild'];
-				$timeStamp = $_SERVER['REQUEST_TIME']; 
-				$PictureName = "Bilder/".$timeStamp."jpg";
-				file_put_contents($PictureName, $Bild);
-			  }
+			$PictureType = $_FILES['Bild']['type'];
+			$PicturePath = $_FILES['Bild']['tmp_name'];
 
 
-			/*
+		$PictureName = "Bilder/" . $timeStamp . ".".$PictureType;
+		move_uploaded_file($PicturePath["Bild"], $PictureName);
+			
 			
 
-			$PictureName = $_FILES['Bild']['name'];
-			$PictureSize = $_FILES['Bild']['size'];
-			
-			$timeStamp = $_SERVER['REQUEST_TIME']; 
-			*/
-
-			
-
+			}
 			//header("Refresh:0; url=index.php"); //reload page and make data count
 		
 

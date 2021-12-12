@@ -7,7 +7,7 @@
 
 	<!-- verlinkung der CSS Datei --> 
 	<link rel="stylesheet" href="CSS/style.css">
-	
+
 	<!-- importieren von der Schriftart Roboto von Google fonts --> 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,10 +45,11 @@
 				$Text = htmlspecialchars($artikelInhalt[1]); 
 				$Autor = htmlspecialchars($artikelInhalt[2]);
 
-				$Bild = file_get_contents($PictureName[0]);
+				
+
 
 				echo "$Titel" . "<br>";
-				echo "<img src='$Bild'>";
+				//echo "<img src='$Bild'>";
 				echo "von " . "$Autor" . "<br>";
 				echo "$Text" . "<br>";
 				echo "<br>";

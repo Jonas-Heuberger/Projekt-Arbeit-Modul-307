@@ -4,55 +4,67 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- verlinkung der CSS Datei --> 
 	<link rel="stylesheet" href="CSS/style.css">
+
+	<!-- importieren von der Schriftart Roboto von Google fonts --> 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-	<title>Document</title>
+	<title>News</title>
+	
 </head>
 <body>
+	
 	<div class="grid">
-
-<div>
-<header>
-	<ul>
-<li> <a href="create.php">Erstellen</a></li>
-<li ><a href="edit.php">Bearbeiten</a></li>
-<li ><a href="index.php">News</a></li>
-  
-</ul>
-	</header>
-</div>
-
-<div class="form-create">
-		<form action="index.php" method="Post">
-
-		<div class="user-titel">
-			<label for="user-titel">Titel:</label>
-			<input type="text" name="cTitel">
+		<div class="navigation">
+		<header>
+		<ul>
+			<li> <a href="create.php">Erstellen</a></li>
+			<li ><a href="edit.php">Bearbeiten</a></li>
+			<li ><a href="index.php">News</a></li> 
+		</ul>
+			</header>
 		</div>
 
-		<div class="user-author">
-			<label for="user-author">Author:</label>
-			<input type="text" name="cAuthor">
+		<div class="Schlagzeilen">
+				<h1>Schlagzeilen</h1>
 		</div>
+			
+		<div class="Inhalt">
+			<p>
+				<?php
+				
+				foreach(glob("Artikel/*.txt") as $filename) {
+				//$replace = str_replace("Text", "Bilder", $filename);
+                //$Bild = str_replace(".txt", ".jpg", $replace);
+                $inhalt= file_get_contents($filename);
+                $artikelInhalt = explode(" | ", $inhalt);
+                $Titel= htmlspecialchars($artikelInhalt[0]);
+				$Text = htmlspecialchars($artikelInhalt[1]); 
+				$Autor = htmlspecialchars($artikelInhalt[2]);
 
-		<div class="user-bild">
-			<label for="user-bild">Bild:</label>
-			<input type="file" name="cPicture">
+				
+
+
+				echo "$Titel" . "<br>";
+				//echo "<img src='$Bild'>";
+				echo "von " . "$Autor" . "<br>";
+				echo "$Text" . "<br>";
+				echo "<a href=$filename>
+				<input type="button" name="bearbeiten" value="edit">
+		</a>"
+				echo "<br>";
+				echo "<br>";
+				echo "<br>";
+			}
+          ?>
+			</p>
 		</div>
+		
+		
 
-		<div class="user-textarea">
-			<textarea name="Text" cols="100" rows="50"></textarea>
-		</div>
-
-		<div class="submit">
-			<input type="button" value="Abbrechen">
-			<input type="submit" value="Ändern">	
-		</div>
-		</form>
-</div>
-
-</div>
+	</div>
 </body>
 </html>
