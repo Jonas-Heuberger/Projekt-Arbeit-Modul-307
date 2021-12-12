@@ -59,8 +59,8 @@
 		<div class="user-bild">
 		<form enctype="multipart/form-data" action="create.php" method="post">
 	  	<input type="hidden" name="max_groesse" value="500000"/>
-	  	<input type="file" name="Bild" required="required"/>
-	  	<input type="submit" name="upload" value="Upload">
+	  	<input type="file" name="file" required="required"/>
+	  	<input type="submit" name="upload" value="Hochladen">
 		</form>
 		</div>
 </div>
@@ -78,16 +78,16 @@
 			$filename= "Artikel/".$timeStamp.".txt";
 			$content= $Titel . " | " . $Autor . " | ". $Text;
             file_put_contents($filename, $content);
+			}
 
-			$PictureType = $_FILES['Bild']['type'];
-			$PicturePath = $_FILES['Bild']['tmp_name'];
+			if(isset($_FILE['file'])){
 
+			$PictureType = $_FILES['file']['type'];
+			$PicturePath = $_FILES['file']['tmp_name'];
 
 		$PictureName = "Bilder/" . $timeStamp . ".".$PictureType;
-		move_uploaded_file($PicturePath["Bild"], $PictureName);
+		move_uploaded_file($PicturePath['file'], $PictureName);
 			
-			
-
 			}
 			//header("Refresh:0; url=index.php"); //reload page and make data count
 		

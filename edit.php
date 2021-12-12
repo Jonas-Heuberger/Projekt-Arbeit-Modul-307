@@ -52,9 +52,7 @@
 				//echo "<img src='$Bild'>";
 				echo "von " . "$Autor" . "<br>";
 				echo "$Text" . "<br>";
-				echo "<a href=$filename>
-				<input type="button" name="bearbeiten" value="edit">
-		</a>"
+				
 				echo "<br>";
 				echo "<br>";
 				echo "<br>";
