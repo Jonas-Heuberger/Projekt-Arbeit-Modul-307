@@ -69,21 +69,18 @@
 			$content= $Titel." | ".$Text." | ".$Autor." | ".$Bild;
 			file_put_contents($filename, $content);
 
-			header("Refresh:0; url=index.php"); //reload page and make data count
-		} else {
-			echo " da hat was nicht geklappt";
-		}
+			//header("Refresh:0; url=index.php"); //reload page and make data count
+		} 
 
 		if(isset($_POST['submit'])){
 
-			
+			$Bild = $_FILES['Bild']['tmp_name'];
 			$timeStamp = $_SERVER['REQUEST_TIME'];  //gmdate("d m y g:i a", $_SERVER['REQUEST_TIME']);
+			$BildName = "Bilder/".$timeStamp.".jpg";
 
-			$picturename= "Bild/".$timeStamp.".jpg";
-			
-			file_put_contents($picturename);
+			file_put_contents($BildName, $Bild);
 
-			header("Refresh:0; url=index.php"); //reload page and make data count
+			//header("Refresh:0; url=index.php"); //reload page and make data count
 		} 
 
 	//if(filesize($_FILES['Bild']) > [Grösse in Bytes]){

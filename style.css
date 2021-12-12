@@ -42,6 +42,7 @@ li a:hover {
   .Inhalt{
 	  grid-area: auto;
 	  text-align: center;
+    padding: 5%;
    
   }
 

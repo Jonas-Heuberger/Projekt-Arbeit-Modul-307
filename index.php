@@ -33,22 +33,19 @@
 				<?php
 				
 				foreach(glob("Artikel/*.txt") as $filename) {
-				//$replace = str_replace("Text", "Bilder", $filename);
-                //$Bild = str_replace(".txt", ".jpg", $replace);
+				$replace = str_replace("Text", "Bilder", $filename);
+                $Bild = str_replace(".txt", ".jpg", $replace);
                 $inhalt= file_get_contents($filename);
                 $artikelInhalt = explode(" | ", $inhalt);
                 $Titel= htmlspecialchars($artikelInhalt[0]);
 				$Text = htmlspecialchars($artikelInhalt[1]); 
 				$Autor = htmlspecialchars($artikelInhalt[2]);
 
-				
+				echo "$Titel" . "<br>";
+				echo "<img src=\"$Bild\"/>" . "<br>";
+				echo "von " . "$Autor" . "<br>";
+				echo "$Text" . "<br>";
 
-				
-
-				
-			
-                $artikel = $Titel . "<br>" . $Bild . "<br>" . $Autor . "<br>" . $Text;    
-                echo "<p>" .$artikel . "</p>";
 			}
           ?>
 			</p>
