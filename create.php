@@ -70,6 +70,8 @@
 			file_put_contents($filename, $content);
 
 			header("Refresh:0; url=index.php"); //reload page and make data count
+		} else {
+			echo " da hat was nicht geklappt";
 		}      
 		
 			
