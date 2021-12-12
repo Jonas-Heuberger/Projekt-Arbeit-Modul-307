@@ -41,7 +41,9 @@ li a:hover {
 /*CSS Code für den Inhalt bei index.php*/
   .Inhalt{
 	  grid-area: auto;
-	  text-align: center;   
+	  text-align: center;  
+    margin-right: 10%;
+    margin-left: auto; 
   }
 
   /*CSS für Formular create.php und edit.php*/
