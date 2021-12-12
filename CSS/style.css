@@ -6,13 +6,13 @@
 }
 
 .grid{
-	  display: grid;
+	  display: grid; /* Erstellen vom Grid*/
 	  grid-template-rows: auto;
 	  grid-template-columns: auto;
   }
   
   
-  
+  /* bedinungen für das Bearbeiten*/
 li {
 	float: right;
 	grid-area: auto;
@@ -38,12 +38,13 @@ li a:hover {
 	  grid-area: auto;
 	  text-align: center;
   }
-
+/*CSS Code für den Inhalt bei index.php*/
   .Inhalt{
 	  grid-area: auto;
 	  text-align: center;   
   }
 
+  /*CSS für Formular create.php und edit.php*/
   form{
 		grid-area: auto;
   }
@@ -52,30 +53,35 @@ li a:hover {
 		grid-area: auto;
   }
 
+  /*CSS für Titel create.php und edit.php*/
   .user-titel{
     text-align: center;
 		grid-area: auto;
 		padding: 1%;
   }
 
+  /*CSS für Autor create.php und edit.php*/
   .user-author{
     text-align: center;
     grid-area: auto;
     padding: 1%;
   }
 
+  /*CSS für Bild create.php und edit.php*/
   .user-bild{
     text-align: center;
 		grid-area: auto;
 		padding: 1%;
   }
 
+  /*CSS für textarea create.php und edit.php*/
   .user-textarea{
     text-align: center;
     grid-area: auto;
     padding: 2%;
   }
 
+  /*CSS für submit create.php und edit.php*/
   .submit{
     text-align: center;
     grid-area: auto;

@@ -1,0 +1,56 @@
+llernjournal | jonas | 22.11.21
+
+Uns wurde die Projektarbeit und deren Umfang zusammen mit den 
+Vorstellungen der Lehrperson vorgestellt.
+
+
+24.11.21
+
+Ich habe einen grossteil des Nachmittages dafür aufgebracht am Konzept der Website 
+zu arbeiten hatte aber die ganze Zeit das Problem mit 
+dem Abschnitt wo der User Text eingeben, bearbeiten und löschen kann. 
+
+
+25.11.21 
+
+Ich habe mich bei der Lehrperson über das Problem erkundigt, mittels folgender Nachricht: 
+&quot;Sehr geehrter Herr Francesco Lurati, ich habe ein 
+paar Verständnis Probleme mit dem Konzept, kennen Sie irgendwelche Quellen,
+an denen ich mich Orientieren bzw. die richtigen Denkansätze finden kann? 
+Um das Problem zu präzisieren, es geht um den Part wo der User Text bearbeiten und 
+hinzufügen kann.&quot; 
+
+Mit freundlichen Grüssen
+
+Jonas&quot;
+
+Und habe dann gespannt auf eine Antwort gewartet.
+
+
+26.11.21
+
+Nachdem die Lehrperson mit folgender Nachricht geantwortet hat: &quot;Schreiben sie auf, 
+welche php-Files sie erstellen würden, welche Funktion diese haben und wie die Daten fliessen. 
+Machen sie Skizzen von allem, auch wie die Website auszusehen hat. 
+Get oder/und Post-Zugriffe nötig? So viel wie möglich in ganzen Sätzen schreiben und Skizzen einbauen.&quot;
+Konnte ich mir eher vorstellen was die Anforderung sind. Ich habe also ein grobes Konzept 
+erstellt und mich dazu entschieden 
+am Samstag das ganze fertig zu stellen weil ich da mehr Zeit habe.
+
+
+27.11.21
+
+Als aller erstes habe ich ein Word Dokument erstellt welches den Anforderungen entspricht. 
+In einem weiteren Schritt habe ich mir gedanken zur Struktur gemacht und habe dann 
+diese mittels Draw.io grafisch festgehalten.
+
+Dann folgte das Design für die ganzen Seite. Dies habe ich mit figma gemacht.
+
+Zuletzt habe ich die Word Datei Nachgeführt und alle Grafiken und Beschreibungen 
+in die Word Datei getan und es zu einer PDF Datei um konventiert.
+
+
+29.11.21
+
+Ich habe das Konzept per Mail an die Lehrperson geschickt. Dann folgte der 
+theoretische Teil der Lehrperson über den Umgang mit Dateien

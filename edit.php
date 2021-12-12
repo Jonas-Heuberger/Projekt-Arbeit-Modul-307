@@ -1,68 +1,109 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- --> 
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<!-- verlinkung der CSS Datei --> 
 	<link rel="stylesheet" href="CSS/style.css">
-
-	<!-- importieren von der Schriftart Roboto von Google fonts --> 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-	<title>News</title>
-	
+	<title>Erstellen</title>
 </head>
 <body>
-	
 	<div class="grid">
-		<div class="navigation">
-		<header>
-		<ul>
+
+		<div>
+			<!-- --> 
+			<header>
+				<ul>
 			<li> <a href="create.php">Erstellen</a></li>
 			<li ><a href="edit.php">Bearbeiten</a></li>
-			<li ><a href="index.php">News</a></li> 
-		</ul>
-			</header>
-		</div>
-
-		<div class="Schlagzeilen">
-				<h1>Schlagzeilen</h1>
-		</div>
+			<li ><a href="index.php">News</a></li>
 			
-		<div class="Inhalt">
-			<p>
-				<?php
-				
-				foreach(glob("Artikel/*.txt") as $filename) {
-				//$replace = str_replace("Text", "Bilder", $filename);
-                //$Bild = str_replace(".txt", ".jpg", $replace);
-                $inhalt= file_get_contents($filename);
-                $artikelInhalt = explode(" | ", $inhalt);
-                $Titel= htmlspecialchars($artikelInhalt[0]);
-				$Text = htmlspecialchars($artikelInhalt[1]); 
-				$Autor = htmlspecialchars($artikelInhalt[2]);
-
-				
-
-
-				echo "$Titel" . "<br>";
-				//echo "<img src='$Bild'>";
-				echo "von " . "$Autor" . "<br>";
-				echo "$Text" . "<br>";
-				
-				echo "<br>";
-				echo "<br>";
-				echo "<br>";
-			}
-          ?>
-			</p>
+			</ul>
+				</header>
 		</div>
+
+		<!-- --> 
+	<div class="form-create">
+		<?php
+		$data = file_get_contents("Artikel/$filename.txt");
+		$explode = explode(" | ", $data);
+		$Titel = $all[0];
+		$Text = $all[2];
+		$Autor = $all[1];
+		?>
+		<form action="create.php" method="Post">
+		<!-- --> 
+		<div class="user-titel">
+			<label for="user-titel">Titel:</label>
+		<textarea maxlength="80" type="text" name="Titel" required="required" cols="20" rows="1"><?php echo $Titel;?></textarea> 
+		</div>
+			<!-- --> 
+		<div class="user-author">
+			<label for="user-author">Autor:</label>
+		<textarea maxlength="50" type="text" name="Autor" required="required" cols="20" rows="1"><?php echo $Autor;?></textarea> 
+		</div>
+			<!-- --> 
 		
+			<!-- --> 
+		<div class="user-textarea">
+			<textarea maxlength="2000" name="Text" cols="100" rows="50" required="required"> <?php echo $Text;?></textarea>
+		</div>
+		<!-- --> 
+		<div class="submit">
+			
+		<!-- --> 
+			<a href="index.php">
+			<input type="button" value="Abbrechen">
+			</a>
+			<!-- --> 
+			<input type="submit" value="Senden" name="submit">
+		</div>
+		</form>
+
+		<div class="user-bild">
+		<form enctype="multipart/form-data" action="create.php" method="post">
+	  	<input type="hidden" name="max_groesse" value="500000"/>
+	  	<input type="file" name="file" required="required"/>
+	  	<input type="submit" name="upload" value="Hochladen">
+		</form>
+		</div>
+</div>
+<!--Formular Inhalt in Textdatei speichern-->
+	<?php
+		if(isset($_POST['submit'])){
+			
+			$Titel = htmlspecialchars($_POST['Titel']);
+			$Text = htmlspecialchars($_POST['Text']);
+			$Autor = htmlspecialchars($_POST['Autor']);
+            
+
+			$timeStamp = $_SERVER['REQUEST_TIME'];  //gmdate("d m y g:i a", $_SERVER['REQUEST_TIME']);
+
+			$filename= "Artikel/".$timeStamp.".txt";
+			$content= $Titel . " | " . $Autor . " | ". $Text;
+            file_put_contents($filename, $content);
+			}
+
+			if(isset($_FILE['file'])){
+
+			$PictureType = $_FILES['file']['type'];
+			$PicturePath = $_FILES['file']['tmp_name'];
+
+		$PictureName = "Bilder/" . $timeStamp . ".".$PictureType;
+		move_uploaded_file($PicturePath['file'], $PictureName);
+			
+			}
+			//header("Refresh:0; url=index.php"); //reload page and make data count
 		
 
-	</div>
+	//if(filesize($_FILES['Bild']) > [500000]){
+		//die Datei ist zu schwer (zu gross)}
+	
+		
+	?>  
+</div>
 </body>
 </html>

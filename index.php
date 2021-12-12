@@ -33,31 +33,24 @@
 		</div>
 			
 		<div class="Inhalt">
-			<p>
+			
 				<?php
 				
 				foreach(glob("Artikel/*.txt") as $filename) {
-				//$replace = str_replace("Text", "Bilder", $filename);
-                //$Bild = str_replace(".txt", ".jpg", $replace);
-                $inhalt= file_get_contents($filename);
+							 ?>  <?php
+							 //code
+				$inhalt= file_get_contents($filename);
                 $artikelInhalt = explode(" | ", $inhalt);
                 $Titel= htmlspecialchars($artikelInhalt[0]);
-				$Text = htmlspecialchars($artikelInhalt[1]); 
-				$Autor = htmlspecialchars($artikelInhalt[2]);
-
-				
-
-
-				echo "$Titel" . "<br>";
-				//echo "<img src='$Bild'>";
-				echo "von " . "$Autor" . "<br>";
-				echo "$Text" . "<br>";
-				echo "<br>";
-				echo "<br>";
-				echo "<br>";
-			}
-          ?>
-			</p>
+				$Autor = htmlspecialchars($artikelInhalt[1]); 
+				$Text = htmlspecialchars($artikelInhalt[2]);
+				echo $Titel."<br>"."<br>";
+				echo "von ".$Autor."<br>"."<br>";
+				echo $Text."<br>"."<br>";
+					?>	<a href="edit.php">Edit</a></br></br>		 
+							 <?php
+						 }
+					   ?>
 		</div>
 	</div>
 </body>

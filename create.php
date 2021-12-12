@@ -80,23 +80,22 @@
             file_put_contents($filename, $content);
 			}
 
-			if(isset($_FILE['file'])){
 
-			$PictureType = $_FILES['file']['type'];
-			$PicturePath = $_FILES['file']['tmp_name'];
 
-		$PictureName = "Bilder/" . $timeStamp . ".".$PictureType;
-		move_uploaded_file($PicturePath['file'], $PictureName);
-			
-			}
-			//header("Refresh:0; url=index.php"); //reload page and make data count
-		
+?>
 
-	//if(filesize($_FILES['Bild']) > [500000]){
-		//die Datei ist zu schwer (zu gross)}
-	
-		
-	?>  
+<?php
+
+if(isset($_FILE['file'])){
+$PictureType = $_FILES['file']['type'];
+
+        $PicturePath = $_FILES['file']['tmp_name'];
+        $PictureName = "Bilder/" . $timeStamp . ".".$PictureType;
+        move_uploaded_file($PicturePath['file'], $PictureName);  
+
+}
+
+?>
 </div>
 </body>
 </html>
