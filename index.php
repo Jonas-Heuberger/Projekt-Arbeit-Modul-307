@@ -22,7 +22,6 @@
 		<header>
 		<ul>
 			<li> <a href="create.php">Erstellen</a></li>
-			<li ><a href="edit.php">Bearbeiten</a></li>
 			<li ><a href="index.php">News</a></li> 
 		</ul>
 			</header>
