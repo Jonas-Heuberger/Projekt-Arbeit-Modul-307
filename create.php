@@ -61,7 +61,7 @@
 			$Titel = htmlspecialchars($_POST['Titel']);
 			$Text = htmlspecialchars($_POST['Text']);
 			$Autor = htmlspecialchars($_POST['Autor']);
-			$Bild = htmlspecialchars($_POST['Bild']);
+			//$Bild = htmlspecialchars($_POST['Bild']);
 
 			$timeStamp = $_SERVER['REQUEST_TIME'];  //gmdate("d m y g:i a", $_SERVER['REQUEST_TIME']);
 
@@ -72,7 +72,24 @@
 			header("Refresh:0; url=index.php"); //reload page and make data count
 		} else {
 			echo " da hat was nicht geklappt";
-		}      
+		}
+
+		if(isset($_POST['submit'])){
+
+			
+			$timeStamp = $_SERVER['REQUEST_TIME'];  //gmdate("d m y g:i a", $_SERVER['REQUEST_TIME']);
+
+			$picturename= "Bild/".$timeStamp.".jpg";
+			
+			file_put_contents($picturename);
+
+			header("Refresh:0; url=index.php"); //reload page and make data count
+		} 
+
+	//if(filesize($_FILES['Bild']) > [Grösse in Bytes]){
+		//die Datei ist zu schwer (zu gross)}
+		
+	
 		
 			
 		
